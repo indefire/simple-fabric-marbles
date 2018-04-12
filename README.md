@@ -63,3 +63,9 @@ Fabric is heavily reliant on docker, combined with docker-compose it simplifies 
 `$ logout`
 1.	After logging back into your AWS instance, verify sudo no longer needs to be prepended to the docker command:
 `$ docker run hello-world`
+
+### Clone Marbles Repository
+This will be quick and the easiest step, just clone the marbles repository to your instance. Clone it to ubuntu’s home directory to keep it simple:
+`$ git clone https://github.com/IBM-Blockchain/marbles.git --depth 1`
+
+
