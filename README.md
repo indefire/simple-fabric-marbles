@@ -91,7 +91,7 @@ We will be leveraging the hyperledger fabric samples for our network so we won�
 1.	If all 6 are listed from the previous command, then move on to next step. If not view the logs of the container that failed with $ `docker logs <container name>`
 1.	You should still be in the fabcar directory of the samples. Install the dependencies for the fabcar node application
 `$ sudo npm install`
-1.	If all went well and no errors were received proceed to next step, if not see Appendix for fixing node-gyp or pkcs11 error
+1.	If all went well and no errors were received proceed to next step, if not see Appendix for [fixing node-gyp](#appendix-a) or pkcs11 error
 1.	Next run three tests
 ```
 $ node enrollAdmin.js
@@ -135,3 +135,28 @@ $ sudo npm install
 ```
 - Fix node grpcs error. Run the below command from the fabric-samples/fabcar directory
 `$ npm rebuild`
+
+### Appendix B Useful Docker commands
+```
+docker-compose start – Starts existing docker containers
+docker-compose stop – Gracefully shutsdown docker containers so the previous command can be run
+docker-compose up – Recreates docker containers
+docker-compose down – Stops docker containers and removes containers
+docker logs <container_name> - View logs of specified container name (docker logs cli)
+```
+
+### Appendix C - Fabric Scripts
+- Stop Network (Does not kill containers) - `fabric-samples/basic-network/stop.sh`
+- Start network (First kills the containers then starts so be cautious) - `fabric-samples/basic-network/start.sh`
+- Start all over - `fabric-samples/basic-network/teardown.sh`
+
+### Resources
+- IBM Marbles install instructions - https://github.com/IBM-Blockchain/marbles/tree/v4.0
+- Local Hyperledger Network - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
+- Install NodeJS - https://www.metachris.com/2017/01/how-to-install-nodejs-6-lts-on-ubuntu-and-centos/
+- Install and Instantiate Chaincode (needed for marbles) - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/install_chaincode_locally.md
+- Clone Marbles Repository - ¬https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
+- Host Marbles locally - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/host_marbles_locally.md
+- Verify marbles crypto and config - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/config_file.md
+- Setup xrdp on Ubuntu –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/
+- Official Hyperledger Fabric 1.0 documentation - http://hyperledger-fabric.readthedocs.io/en/release-1.0/
