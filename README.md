@@ -151,12 +151,12 @@ docker logs <container_name> - View logs of specified container name (docker log
 - Start all over - `fabric-samples/basic-network/teardown.sh`
 
 ### Resources
-- IBM Marbles install instructions - https://github.com/IBM-Blockchain/marbles/tree/v4.0
-- Local Hyperledger Network - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
-- Install NodeJS - https://www.metachris.com/2017/01/how-to-install-nodejs-6-lts-on-ubuntu-and-centos/
-- Install and Instantiate Chaincode (needed for marbles) - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/install_chaincode_locally.md
-- Clone Marbles Repository - ¬https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
-- Host Marbles locally - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/host_marbles_locally.md
-- Verify marbles crypto and config - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/config_file.md
-- Setup xrdp on Ubuntu –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/
-- Official Hyperledger Fabric 1.0 documentation - http://hyperledger-fabric.readthedocs.io/en/release-1.0/
+- **IBM Marbles install instructions** - https://github.com/IBM-Blockchain/marbles/tree/v4.0
+- **Local Hyperledger Network** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
+- **Install NodeJS** - https://www.metachris.com/2017/01/how-to-install-nodejs-6-lts-on-ubuntu-and-centos/
+- **Install and Instantiate Chaincode** (needed for marbles) - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/install_chaincode_locally.md
+- **Clone Marbles Repository** - ¬https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
+- **Host Marbles locally** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/host_marbles_locally.md
+- **Verify marbles crypto and config** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/config_file.md
+- **Setup xrdp on Ubuntu** –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/
+- **Official Hyperledger Fabric 1.0 documentation** - http://hyperledger-fabric.readthedocs.io/en/release-1.0/
