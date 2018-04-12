@@ -1,5 +1,5 @@
 # simple-fabric-marbles
-This is a simplified implementation of **IBM's Fabric Marbles** that utilizes [Fabric 1.0.6](http://hyperledger-fabric.readthedocs.io/en/release-1.0/), a local fabric network, and [IBM Marbles v4](https://github.com/IBM-Blockchain/marbles/tree/v4.0). This project was created to consolidate some of the omitted steps (from my perspective) and the extra steps that confuse the setup process a little from the Marbles project . It was originally created in an AWS environment but should work on any x86 Linux environment. There are two paths that can be taken for this project, one is running the simple scripts in the correct order included in the scripts folder, the other is to follow along in the second path which essentially does the same thing the scripts do.
+This is a simplified implementation of **IBM's Fabric Marbles** that utilizes [Fabric 1.0.6](http://hyperledger-fabric.readthedocs.io/en/release-1.0/), a local fabric network, and [IBM Marbles v4](https://github.com/IBM-Blockchain/marbles/tree/v4.0). This project was created to consolidate some of the omitted steps (from my perspective) and the extra steps that confuse the setup process a little from the Marbles project . It was originally created in an AWS environment but should work on any x86 Linux environment. There are two paths that can be taken for this project, [path one](#path-1-easy---run-shell-scripts-from-the-provided-scripts-directory) one is running the simple scripts in the correct order included in the scripts folder, the other is to follow along in the [second path](#path-2---step-by-step-instructions) which essentially does the same thing the scripts do.
 ***
 # Path 1 (Easy) - Run shell scripts from the provided scripts directory
 
@@ -160,3 +160,8 @@ docker logs <container_name> - View logs of specified container name (docker log
 - **Verify marbles crypto and config** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/config_file.md
 - **Setup xrdp on Ubuntu** –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/
 - **Official Hyperledger Fabric 1.0 documentation** - http://hyperledger-fabric.readthedocs.io/en/release-1.0/
+
+
+#### Contributers
+- Chuck Buhecker
+- Mike Shaughnessy
