@@ -45,3 +45,21 @@ Go is used as the programming language for chaincode, it is also what Fabric is 
 1. Verify install worked by typing
 `$ node –version`
 1. If all went well you should see the version such as: v6.13.0
+
+
+### Install Docker and docker-compose
+Fabric is heavily reliant on docker, combined with docker-compose it simplifies the process of setting up multiple machines
+1.	First install docker
+`$ sudo apt install docker.io`
+1. Then download and install docker-compose
+``$ sudo curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose``
+1.	Make the download executable
+`$ chmod +x /usr/local/bin/docker-compose`
+1.	Verify docker-compose is functional
+`$ docker-compose –version`
+1.	Add the ubuntu user to the docker group or else you’ll have to use sudo each time to run docker
+`$ sudo usermod –aG docker ubuntu`
+1.	Logout and log back into your aws instance which will reload ubuntu’s groups
+`$ logout`
+1.	After logging back into your AWS instance, verify sudo no longer needs to be prepended to the docker command:
+`$ docker run hello-world`
