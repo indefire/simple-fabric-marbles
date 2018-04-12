@@ -153,6 +153,7 @@ docker logs <container_name> - View logs of specified container name (docker log
 - Start all over - `fabric-samples/basic-network/teardown.sh`
 
 ### Resources
+- **Anders Brownworth's Blockchain Demo** - https://anders.com/blockchain/
 - **IBM Marbles install instructions** - https://github.com/IBM-Blockchain/marbles/tree/v4.0
 - **Local Hyperledger Network** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
 - **Install NodeJS** - https://www.metachris.com/2017/01/how-to-install-nodejs-6-lts-on-ubuntu-and-centos/
