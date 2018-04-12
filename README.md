@@ -29,9 +29,9 @@ Go is used as the programming language for chaincode, it is also what Fabric is 
 1. Save the File by typing `shift + :` then `wq Enter`
 1. You will have to either logout to reload your profile or type:
 `$ source ~/.profile`
-1 Verify go is installed properly by typing:
+1. Verify go is installed properly by typing:
 `$ go version`
-1.If installed properly you will see the Go version displayed
+1. If installed properly you will see the Go version displayed
 
 ### Install NodeJS version 6.x
 1. Download NodeJS
@@ -68,4 +68,70 @@ Fabric is heavily reliant on docker, combined with docker-compose it simplifies 
 This will be quick and the easiest step, just clone the marbles repository to your instance. Clone it to ubuntu’s home directory to keep it simple:
 `$ git clone https://github.com/IBM-Blockchain/marbles.git --depth 1`
 
+***
+### This is a good stopping point if needed before starting up fabric
+***
 
+### Hyperledger Fabric Samples
+We will be leveraging the hyperledger fabric samples for our network so we won’t need to do as many customizations. We will first download the fabric samples from github, download and install the fabric images and binaries, install the node dependencies for the fabcar example application, test the fabcar example, and view the peer logs we interacted with.
+
+1.	Clone the fabric-samples project in github to home your directory
+`$ git clone https://github.com/hyperledger/fabric-samples.git`
+1.	Download the fabric setup script
+`$ curl -sSL https://goo.gl/kFFqh5 | bash -s 1.0.6`
+1.	Download the docker images and fabric binaries utilizing the setup script
+`$ sudo bash setup_script.sh`
+1.	Once that step has completed, which may take some time, be sure to add the bin folder to your path, example
+`$ export PATH=$PWD/bin;$PATH`
+1.	Try starting the network because if it doesn’t start, you’ll need to troubleshoot.
+`$ cd fabcar`
+`$ ./startFabric.sh`
+1.	We should now verify all 6 containers started up
+`$ docker ps`
+1.	If all 6 are listed from the previous command, then move on to next step. If not view the logs of the container that failed with $ `docker logs <container name>`
+1.	You should still be in the fabcar directory of the samples. Install the dependencies for the fabcar node application
+`$ sudo npm install`
+1.	If all went well and no errors were received proceed to next step, if not see Appendix for fixing node-gyp or pkcs11 error
+1.	Next run three tests
+```
+$ node enrollAdmin.js
+$ node registerUser.js
+$ node query.js
+```
+If you received an error on the first test relating to grpc see Appendix fix node grpc error
+
+### Install and Instantiate Marbles Chaincode
+We are going to install the node dependencies for marbles, and then install and instantiate the chaincode (code that runs on the blockchain) that the marbles application will use.
+1.	In your shell navigate to the marbles director and run
+`$ npm install`
+You may encounter deprecation warnings which are fine, just so no errors occur
+1.	Navigate to the marbles/scripts directory and run the node install chaincode script. This step will copy the chaincode to the fabric peer’s file system
+`$ node install_chaincode.js`
+1.	Now will the chaincode installed, we can instantiate it. 
+`$ node instantiate_chaincode.js`
+
+### Run Marbles application 
+This is the moment we’ve been waiting for. Actually running the nodejs Marbles application to transfer marbles to/from users.
+There is a slight issue with Marbles as the keystore is hardcoded [here](https://github.com/IBM-Blockchain/marbles/blob/a0b55dda42edee2564cde2a2fa7064e4fff48bd1/config/blockchain_creds_local.json#L9), so we have to copy keys to your $HOME directory first. 
+1. `cd $HOME`
+1. `cp fabric-samples/fabcar/hfc-key-store $HOME`
+1. `sed -i 's#/fabric-samples/fabcar/#/.#' marbles/config/connection_profile_local.json`
+1. `cd marbles`
+1. Start Marbles
+`gulp marbles_local`
+1.	You should see a Server up message and below the informational box an additional message will be displayed that says to open your browser and navigated to http://localhost:3001 to initiate setup. This is where we branch slightly from the instructions from IBM. Since your server is running in aws, you will need to change the hostname from localhost to the hostname (or public ip) in aws similar to 54.243.7.206:3001  in your local browser.
+1.	Go to the url with the port number specified, no need to enter a password and leave the prefilled admin username.
+1. The Marbles application will do some verifications before the next screen, when it is finished with its verifications the Marbles application will walk you through the remaining steps creating Owners and Marbles.
+
+
+
+
+
+### Appendix A
+- Fix node-gyp or pkcs11 error when isntalling node dependencies. If the error occurred in the npm install step of fabcar, run the below commands from the fabric-samples/fabcar directory
+```
+$ sudo apt install -node-gyp
+$ sudo npm install
+```
+- Fix node grpcs error. Run the below command from the fabric-samples/fabcar directory
+`$ npm rebuild`
