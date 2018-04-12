@@ -98,7 +98,7 @@ $ node enrollAdmin.js
 $ node registerUser.js
 $ node query.js
 ```
-If you received an error on the first test relating to grpc see Appendix fix node grpc error
+If you received an error on the first test relating to grpc see Appendix [fix node grpc](#appendix-a) error
 
 ### Install and Instantiate Marbles Chaincode
 We are going to install the node dependencies for marbles, and then install and instantiate the chaincode (code that runs on the blockchain) that the marbles application will use.
