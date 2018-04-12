@@ -1,5 +1,5 @@
 # simple-fabric-marbles
-This is a simplified implementation of **IBM's Fabric Marbles** that utilizes [Fabric 1.0.6](http://hyperledger-fabric.readthedocs.io/en/release-1.0/), a local fabric network, and [IBM Marbles v4](https://github.com/IBM-Blockchain/marbles/tree/v4.0). This project was created to consolidate some of the omitted steps (from my perspective) and the extra steps that confuse the setup process a little from the Marbles project . It was originally created in an AWS environment but should work on any x86 Linux environment. There are two paths that can be taken for this project, [path one](#path-1-easy---run-shell-scripts-from-the-provided-scripts-directory) one is running the simple scripts in the correct order included in the scripts folder, the other is to follow along in the [second path](#path-2---step-by-step-instructions) which essentially does the same thing the scripts do.
+This is a simplified implementation of **IBM's Fabric Marbles** that utilizes [Fabric 1.0.6](http://hyperledger-fabric.readthedocs.io/en/release-1.0/), a local fabric network, and [IBM Marbles v4](https://github.com/IBM-Blockchain/marbles/tree/v4.0). This project was created to consolidate some of the omitted steps (from my perspective) and the extra steps that confuse the setup process a little from the Marbles project . It was originally created in an AWS environment but should work on various Linux environments with little work. There are two paths that can be taken for this project, [path one](#path-1-easy---run-shell-scripts-from-the-provided-scripts-directory) one is running the simple scripts in the correct order included in the scripts folder, the other is to follow along in the [second path](#path-2---step-by-step-instructions) which essentially does the same thing the scripts do.
 ***
 # Path 1 (Easy) - Run shell scripts from the provided scripts directory
 
@@ -12,7 +12,9 @@ This is a simplified implementation of **IBM's Fabric Marbles** that utilizes [F
 1. `$ scripts/.installchaincode.sh`
 1. `$ scripts/.installgulp.sh`
 1. `$ scripts/.gulpconfig.sh`
-
+1.	You should see a Server up message and below the informational box an additional message will be displayed that says to open your browser and navigated to http://localhost:3001 to initiate setup. This is where we branch slightly from the instructions from IBM. Since your server is running in aws, you will need to change the hostname from localhost to the hostname (or public ip) in aws similar to 54.243.7.206:3001  in your local browser.
+1.	Go to the url with the port number specified, no need to enter a password and leave the prefilled admin username.
+1. The Marbles application will do some verifications before the next screen, when it is finished with its verifications the Marbles application will walk you through the remaining steps creating Owners and Marbles.
 ***
 # Path 2 - Step By Step Instructions
 
