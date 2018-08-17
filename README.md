@@ -161,7 +161,8 @@ docker logs <container_name> - View logs of specified container name (docker log
 - **Clone Marbles Repository** - ¬https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/use_local_hyperledger.md
 - **Host Marbles locally** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/host_marbles_locally.md
 - **Verify marbles crypto and config** - https://github.com/IBM-Blockchain/marbles/blob/v4.0/docs/config_file.md
-- **Setup xrdp on Ubuntu** –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/
+- ~~**Setup xrdp on Ubuntu** –This is incredibly useful if you want to modify the chaincode or the marbles application https://aws.amazon.com/premiumsupport/knowledge-center/connect-to-ubuntu-1604-windows/~~ AWS took this ink down
+- **Setup xrdp on Ubuntu with simpler GUI** - https://comtechies.com/how-to-set-up-gui-on-amazon-ec2-ubuntu-server.html
 - **Official Hyperledger Fabric 1.0 documentation** - http://hyperledger-fabric.readthedocs.io/en/release-1.0/
 
 
